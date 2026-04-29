@@ -244,7 +244,7 @@ public class main {
             // Mostrar algunas probabilidades Pn
             System.out.println("-".repeat(50));
             System.out.println("Probabilidades Pn (primeras 5):      ");
-            for (int i = 0; i <= 4; i++) {
+            for (int i = 1; i <= 5; i++) {
                 try {
                     System.out.printf("  P%d = %.6f%n", i, modelo.Pn(i));
                 } catch (Exception e) {
