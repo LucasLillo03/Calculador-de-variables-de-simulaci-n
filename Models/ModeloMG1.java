@@ -1,3 +1,4 @@
+package Models;
 public class ModeloMG1 extends Modelo{
 
     protected double o; //varianza 

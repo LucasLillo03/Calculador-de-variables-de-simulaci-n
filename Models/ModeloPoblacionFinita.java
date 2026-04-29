@@ -1,3 +1,4 @@
+package Models;
 public class ModeloPoblacionFinita extends Modelo{
 
     private int c;    // servidores

@@ -1,3 +1,10 @@
+import Models.Modelo;
+import Models.ModeloMG1;
+import Models.ModeloMGServidoresInfinitos;
+import Models.ModeloMM1;
+import Models.ModeloMMC;
+import Models.ModeloMMCN;
+import Models.ModeloPoblacionFinita;
 import java.util.Scanner;
 
 public class main {

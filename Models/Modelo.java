@@ -1,3 +1,4 @@
+package Models;
 import java.util.function.Function;
 
 public abstract class Modelo {

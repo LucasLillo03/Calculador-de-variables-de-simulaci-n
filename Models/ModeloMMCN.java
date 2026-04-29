@@ -1,3 +1,4 @@
+package Models;
 public class ModeloMMCN extends Modelo {
 
     private int c; 
@@ -23,8 +24,8 @@ public class ModeloMMCN extends Modelo {
 
     @Override
     public double Pn(int n) {
-        double numerador = Math.pow(a, k); 
-        double denominador = factorial(c) * Math.pow(c, k - c); 
+        double numerador = Math.pow(a, n); 
+        double denominador = factorial(c) * Math.pow(c, n - c); 
 
         return  (numerador / denominador) * P0(); 
     }
