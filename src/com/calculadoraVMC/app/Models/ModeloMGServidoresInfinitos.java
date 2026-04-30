@@ -1,4 +1,4 @@
-package Models;
+package src.com.calculadoraVMC.app.Models;
 public class ModeloMGServidoresInfinitos extends Modelo {
 
     private final double e = 2.71828;

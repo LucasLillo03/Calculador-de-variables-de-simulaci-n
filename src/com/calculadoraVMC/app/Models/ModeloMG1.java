@@ -1,4 +1,4 @@
-package Models;
+package src.com.calculadoraVMC.app.Models;
 public class ModeloMG1 extends Modelo{
 
     protected double o; //varianza 

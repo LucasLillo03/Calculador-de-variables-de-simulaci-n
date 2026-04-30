@@ -1,4 +1,4 @@
-package Models;
+package src.com.calculadoraVMC.app.Models;
 public class ModeloMMC extends Modelo{
     private int c; // servidores
 

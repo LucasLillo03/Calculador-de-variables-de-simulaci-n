@@ -1,4 +1,4 @@
-package Models;
+package src.com.calculadoraVMC.app.Models;
 import java.util.function.Function;
 
 public abstract class Modelo {

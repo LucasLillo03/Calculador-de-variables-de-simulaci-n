@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Created-By: Generator
+Main-Class: src.com.calculadoraVMC.app.Main

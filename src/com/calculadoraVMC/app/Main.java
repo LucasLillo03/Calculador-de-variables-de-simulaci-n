@@ -1,13 +1,14 @@
-import Models.Modelo;
-import Models.ModeloMG1;
-import Models.ModeloMGServidoresInfinitos;
-import Models.ModeloMM1;
-import Models.ModeloMMC;
-import Models.ModeloMMCN;
-import Models.ModeloPoblacionFinita;
+package src.com.calculadoraVMC.app;
 import java.util.Scanner;
+import src.com.calculadoraVMC.app.Models.Modelo;
+import src.com.calculadoraVMC.app.Models.ModeloMG1;
+import src.com.calculadoraVMC.app.Models.ModeloMGServidoresInfinitos;
+import src.com.calculadoraVMC.app.Models.ModeloMM1;
+import src.com.calculadoraVMC.app.Models.ModeloMMC;
+import src.com.calculadoraVMC.app.Models.ModeloMMCN;
+import src.com.calculadoraVMC.app.Models.ModeloPoblacionFinita;
 
-public class main {
+public class Main {
     private static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) {
@@ -258,4 +259,6 @@ public class main {
         
         System.out.println("=".repeat(50));
     }
+    
 }
+

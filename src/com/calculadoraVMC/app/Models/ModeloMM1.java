@@ -1,4 +1,4 @@
-package Models;
+package src.com.calculadoraVMC.app.Models;
 public class ModeloMM1 extends Modelo {
 
     public ModeloMM1(double l, double m) {

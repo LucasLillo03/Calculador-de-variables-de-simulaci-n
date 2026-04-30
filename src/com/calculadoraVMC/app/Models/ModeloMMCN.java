@@ -1,4 +1,4 @@
-package Models;
+package src.com.calculadoraVMC.app.Models;
 public class ModeloMMCN extends Modelo {
 
     private int c; 

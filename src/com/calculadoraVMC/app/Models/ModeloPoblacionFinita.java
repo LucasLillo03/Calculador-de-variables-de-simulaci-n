@@ -1,4 +1,4 @@
-package Models;
+package src.com.calculadoraVMC.app.Models;
 public class ModeloPoblacionFinita extends Modelo{
 
     private int c;    // servidores
@@ -14,13 +14,12 @@ public class ModeloPoblacionFinita extends Modelo{
     @Override
     public double P0() {
         double primeraSumatoria = sumatoria(0, this.c - 1,
-            n -> combinatoria(this.k, n) * Math.pow(this.l / this.m, n));
+        n -> combinatoria(this.k, n) * Math.pow(this.l / this.m, n));
+        
+        double segundaSumatoria = sumatoria(this.c, this.k, n -> pesoEstadoNMayorIgualC(n));
             
-            double segundaSumatoria = sumatoria(this.c, this.k,
-                n -> pesoEstadoNMayorIgualC(n));
-                
-                return Math.pow((primeraSumatoria + segundaSumatoria), -1);
-            }
+        return Math.pow((primeraSumatoria + segundaSumatoria), -1);
+    }
     
     @Override
     public double Pn(int n) {
@@ -54,11 +53,9 @@ public class ModeloPoblacionFinita extends Modelo{
 
     @Override
     public double Lq() { 
-        double a = l / m; 
-        double p = l / (c*m);
+        double P0 = this.P0();
 
-        return P0() * (Math.pow(a, c)) * p / (factorial(c) * Math.pow(1 - p, 2))
-                * (1 - Math.pow(p, k - c) - (k - c) * Math.pow(p, k - c) * (1 - p));
+        return sumatoria(c, k, n -> (n - c) * Pn_aux(n, P0));
     }
     
     @Override
@@ -68,7 +65,7 @@ public class ModeloPoblacionFinita extends Modelo{
     public double wq(){ return Lq() / tasaEfectivaDeLlegadas();}
     
     @Override
-    public double p(){ return tasaEfectivaDeLlegadas() /this.c * this.m;}
+    public double p(){ return tasaEfectivaDeLlegadas() / (this.c * this.m);}
     
     // n = clientes esperados
     private double pesoEstadoNMayorIgualC(int n) {
