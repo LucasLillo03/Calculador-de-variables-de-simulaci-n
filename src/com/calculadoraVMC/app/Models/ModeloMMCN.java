@@ -1,4 +1,7 @@
 package src.com.calculadoraVMC.app.Models;
+
+import src.com.calculadoraVMC.app.Main;
+
 public class ModeloMMCN extends Modelo {
 
     private int c; 
@@ -12,6 +15,60 @@ public class ModeloMMCN extends Modelo {
         this.k = k; 
 
         a = l / m; 
+    }
+
+    @Override
+    public void setl(double l){
+        this.l = l; 
+        a = l / m; 
+    }
+
+    @Override
+    public void setm(double m){
+        this.m = m; 
+        a = l / m; 
+    }
+
+    @Override 
+    public void cambiarParametros(){
+        System.out.println("¿Que parámetro desea cambiar? (l (tasa de arribos) / m (tasa de servicio) / c (servidores) / k (población)): ");
+        String parametro = Main.scanner.nextLine().trim().toLowerCase();
+        switch (parametro) {
+            case "l":
+                System.out.println("Ingrese la nueva tasa de arribos (l): ");
+                double nuevaL = Main.scanner.nextDouble();
+                Main.scanner.nextLine(); // Consumir el salto de línea
+                setl(nuevaL);
+                break;
+            case "m":
+                System.out.println("Ingrese la nueva tasa de servicio (m): ");
+                double nuevaM = Main.scanner.nextDouble();
+                Main.scanner.nextLine(); // Consumir el salto de línea
+                setm(nuevaM);
+                break;
+            case "c":
+                System.out.println("Ingrese el nuevo número de servidores (c): ");
+                int nuevoC = Main.scanner.nextInt();
+                Main.scanner.nextLine(); // Consumir el salto de línea
+                setc(nuevoC);
+                break;
+            case "k":
+                System.out.println("Ingrese la nueva población (k): ");
+                int nuevoK = Main.scanner.nextInt();
+                Main.scanner.nextLine(); // Consumir el salto de línea
+                setk(nuevoK);
+                break;
+            default:
+                System.out.println("Parámetro no reconocido. No se realizaron cambios.");
+        }
+    }
+
+    public void setc(int c){
+        this.c = c;
+    }
+
+    public void setk(int k){
+        this.k = k; 
     }
 
     @Override

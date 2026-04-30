@@ -9,7 +9,7 @@ import src.com.calculadoraVMC.app.Models.ModeloMMCN;
 import src.com.calculadoraVMC.app.Models.ModeloPoblacionFinita;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) {
         boolean continuar = true;
@@ -226,6 +226,7 @@ public class Main {
         }
     }
     
+
     private static void mostrarResultados(Modelo modelo) {
         System.out.println("\n" + "=".repeat(50));
         System.out.println("RESULTADOS");
@@ -253,6 +254,14 @@ public class Main {
                     break;
                 }
             }
+
+            System.out.println("-".repeat(50));
+            System.out.println("¿Desea cambiar algún parámetro del modelo? (s/n): ");
+            if (scanner.nextLine().trim().toLowerCase().equals("s")) {
+                modelo.cambiarParametros();
+                mostrarResultados(modelo); // Mostrar resultados actualizados
+            }
+
         } catch (Exception e) {
             System.out.println("Error al calcular algunos valores: " + e.getMessage());
         }

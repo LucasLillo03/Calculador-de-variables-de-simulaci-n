@@ -1,4 +1,7 @@
 package src.com.calculadoraVMC.app.Models;
+
+import src.com.calculadoraVMC.app.Main;
+
 public class ModeloMMC extends Modelo{
     private int c; // servidores
 
@@ -6,6 +9,38 @@ public class ModeloMMC extends Modelo{
         this.l = l;
         this.m = m;
         this.c = c; 
+    }
+
+    public void setc(int c){
+        this.c = c;
+    }
+
+    @Override 
+    public void cambiarParametros(){
+        System.out.println("¿Que parámetro desea cambiar? (l (tasa de arribos) / m (tasa de servicio) / c (servidores) / k (población)): ");
+        String parametro = Main.scanner.nextLine().trim().toLowerCase();
+        switch (parametro) {
+            case "l":
+                System.out.println("Ingrese la nueva tasa de arribos (l): ");
+                double nuevaL = Main.scanner.nextDouble();
+                Main.scanner.nextLine(); // Consumir el salto de línea
+                setl(nuevaL);
+                break;
+            case "m":
+                System.out.println("Ingrese la nueva tasa de servicio (m): ");
+                double nuevaM = Main.scanner.nextDouble();
+                Main.scanner.nextLine(); // Consumir el salto de línea
+                setm(nuevaM);
+                break;
+            case "c":
+                System.out.println("Ingrese el nuevo número de servidores (c): ");
+                int nuevoC = Main.scanner.nextInt();
+                Main.scanner.nextLine(); // Consumir el salto de línea
+                setc(nuevoC);
+                break;
+            default:
+                System.out.println("Parámetro no reconocido. No se realizaron cambios.");
+        }
     }
 
     @Override
